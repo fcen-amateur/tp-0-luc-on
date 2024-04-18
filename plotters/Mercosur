@@ -3,29 +3,17 @@ from gapminder import gapminder
 
 
 def plot():
-    fig, axes = plt.subplots(1,2, figsize=(14,7))
-    sns.boxplot(gapminder[(gapminder['country'] == 'Argentina') |
-                           (gapminder['country'] == 'Brazil') |
-                           (gapminder['country'] == 'Uruguay') |
-                           (gapminder['country'] == 'Paraguay') |
-                           (gapminder['country'] == 'Venezuela')],
-             x = 'country', y = 'lifeExp',hue = 'country', ax=axes[0])
-    axes[0].set_title('Expectativa de vida Mercosur', fontsize = 15)
-    axes[0].set_xlabel('Pais', fontsize = 12)
-    axes[0].set_ylabel('Expectativa de Vida', fontsize = 12)
-    sns.boxplot(gapminder[(gapminder['country'] == 'Argentina') |
-                           (gapminder['country'] == 'Brazil') |
-                           (gapminder['country'] == 'Uruguay') |
-                           (gapminder['country'] == 'Paraguay') |
-                           (gapminder['country'] == 'Venezuela')],
-             x = 'country', y = 'gdpPercap',hue = 'country', ax=axes[1])
-    axes[1].set_title('GDP Mercosur', fontsize = 15)
-    axes[1].set_xlabel('Pais', fontsize = 12)
-    axes[1].set_ylabel('GDP por persona', fontsize = 12)
-
-  
+    figura = (
+        so.Plot(gapminder[["continent", "country"]].drop_duplicates(), x="continent")
+        .add(so.Bar(), so.Hist())
+        .label(
+            title="Cantidad de países por continente",
+            x="Continente",
+            y="Cantidad de países",
+        )
+    )
     return dict(
         descripcion="Un sofisticado gráfico con el número de países en cada continente",
         autor="La cátedra",
-        figura=(fig, axes),
+        figura=figura,
     )
