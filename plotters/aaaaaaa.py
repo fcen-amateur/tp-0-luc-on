@@ -1,3 +1,6 @@
+import seaborn.objects as so
+from gapminder import gapminder
+
 
 def plot():
     aa = gapminder.groupby(['year', 'continent'])['lifeExp'].mean()
