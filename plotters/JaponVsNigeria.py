@@ -1,54 +1,30 @@
-import numpy as np
-import pandas as pd
-import seaborn as sns
 import seaborn.objects as so
 import matplotlib.pyplot as plt
 from gapminder import gapminder
-from sklearn import linear_model
-from sklearn.metrics import mean_squared_error, r2_score
-from sklearn.preprocessing import PolynomialFeatures
-
 
 def plot():
-
+    ax1 = plt.subplots(nrows =1,ncols=1,sharex = False)
     jap = gapminder[gapminder.country == "Japan"]
     nig = gapminder[gapminder.country == "Nigeria"]
-
-    polynomial_features= PolynomialFeatures(degree=2, include_bias=False)
-
-    x_poly = polynomial_features.fit_transform(jap[['year']])
-
-    modelo = linear_model.LinearRegression()
-
-    modelo.fit(x_poly, jap['pop'])
-
-    beta_jap = modelo.coef_
-
-    beta0_jap = modelo.intercept_.item()
-
-
+    bra = gapminder[gapminder.country == "Brazil"]
+    per = gapminder[gapminder.country == "Peru"]
 
     figura = (
         so.Plot(
-            data = gapminder,
+            data = gapminder[(gapminder.country == "Japan") | (gapminder.country == "Nigeria") | (gapminder.country == "Brazil")],
             x = "year",
-            y = "pop",
         )
 
-        .add(so.Dot(color = "orange", edgecolor = ".1", edgewidth = .5), data = jap)
-        .add(so.Line(color = "orange"), so.PolyFit(2), label = "Japón", data = jap)
+        .add(so.Dot(color = "orange", edgecolor = ".1", edgewidth = .5), data = jap, y ="pop")
+        .add(so.Line(color = "orange"), so.PolyFit(2), label = "Japón", data = jap, y ="pop")
 
-        .add(so.Dot(color = "g", edgecolor = ".1", edgewidth = .5), data = nig)
-        .add(so.Line(color = "g", fillcolor = "blue"), so.PolyFit(2), label = "Nigeria", data = nig)
-
-        .add(so.Text(halign='left', text = 'tt'))
+        .add(so.Dot(color = "g", edgecolor = ".1", edgewidth = .5), data = nig, y ="pop")
+        .add(so.Line(color = "g", fillcolor = "blue"), so.PolyFit(2), label = "Nigeria", data = nig, y ="pop")
 
 
-
-        .limit(x = (1950, 2040), y = (0, 2*1e8))
-
+        .limit(x = (1950, 2010), y = (0, 1.5*1e8))
+        #.facet()
         .label(
-            title="Prueba",
             x="Año",
             y="Población",
         )
@@ -59,7 +35,7 @@ def plot():
     )
 
     return dict(
-        descripcion="Crecimiento poblacional de Japón contra Nigeria",
+        descripcion="Crecimiento poblacional de Japón contra Nigeria. En este gráfico podemos ver que el crecimiento en Nigeria es mucho mayor. Tambíen podemos predecir que la población de Nigeria va a superar a la de Japón ampliamente.",
         autor="fela!",
         figura=figura,
     )
