@@ -41,7 +41,7 @@ def plot():
         )
     )
     return dict(
-        descripcion="Expectativa de vida en países de Oceanía a lo largo del tiempo",
-        autor="La cátedra",
+        descripcion="PBI promedio de los paises americanos agrupados por regiones",
+        autor="Damián Radiziviluk",
         figura=figura,
     )
