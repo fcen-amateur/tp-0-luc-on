@@ -5,21 +5,19 @@ from gapminder import gapminder
 def plot():
     figura = (
         so.Plot(
-            gapminder[gapminder.continent == "Oceania"],
+            gapminder[gapminder.country == "Argentina"],
             x="year",
-            y="lifeExp",
-            color="country",
+            y="gdpPercap",
         )
         .add(so.Line())
         .label(
-            title="Expectativa de vida en Oceanía",
+            title="PBI per cápita en Argentina",
             x="Año",
-            y="Expectativa de vida",
-            color="País",
+            y="PBI per cápita",
         )
     )
     return dict(
-        descripcion="Expectativa de vida en países de Oceanía a lo largo del tiempo",
-        autor="La cátedra",
+        descripcion="Evolución del PBI per cápita en Argentina a través de los años",
+        autor="Iván A. Miguel Viola",
         figura=figura,
     )
