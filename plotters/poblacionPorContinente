@@ -7,13 +7,13 @@ def plot():
         so.Plot(gapminder[["continent", "country"]].drop_duplicates(), x="continent")
         .add(so.Bar(), so.Hist())
         .label(
-            title="Cantidad de población por continente",
+            title="Cantidad de población por continente en 1952",
             x="Continente",
             y="Cantidad de población",
         )
     )
     return dict(
-        descripcion="Un sofisticado gráfico con el número de población en cada continente",
+        descripcion="Un sofisticado gráfico con el número de población en cada continente en el año 1952",
         autor="Santillan, Lautaro",
         figura=figura,
     )
