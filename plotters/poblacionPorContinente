@@ -7,9 +7,9 @@ def plot():
         so.Plot(gapminder[["continent", "country"]].drop_duplicates(), x="continent")
         .add(so.Bar(), so.Hist())
         .label(
-            title="Cantidad de países por continente",
+            title="Cantidad de población por continente",
             x="Continente",
-            y="Cantidad de países",
+            y="Cantidad de población",
         )
     )
     return dict(
