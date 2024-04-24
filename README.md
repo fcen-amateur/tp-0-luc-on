@@ -21,7 +21,7 @@ A partir del dataset `gapminder` en el paquete homónimo, y usando la interfaz `
 3. En la carpeta `plotters`, cree un nuevo archivo de Python.
 4. Copie los contenidos de la plantilla `paisesPorContinente.py` o `lifeExpOceania.py` al archivo recién creado. 
    Este archivo deberá contener una única función sin argumentos, de nombre `plot`, y que devuelva un diccionario (`dict`) con exactamente tres claves y sus respectivos valores:
-  - "figura", cuyo valor sea un objeto `seaborn.objects.Plot` con el gráfico realizado,
+  - "figura", cuyo valor sea un objeto `seaborn.objects.Plot` o `matplotlib.figure.Figure` con el gráfico realizado,
   - "autor", cuyo valor sea una _cadena_ (`str`, "string") de caracters con el nombre del autor de la `figura` y
   - "descripcion" (sin tilde), cuyo valor sea un breve párrafo describiendo los aspectos relevantes del gráfico presentado.
 6. Vaya _commiteando_ los cambios que realiza a su rama, hasta estar satisfecho/a con el resultado.
