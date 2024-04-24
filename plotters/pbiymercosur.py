@@ -14,7 +14,7 @@ def plot():
         )        
     )
     return dict(
-        descripcion="Un sofisticado gráfico con el número de países en cada continente",
-        autor="La cátedra",
+        descripcion="PBI per cápita de los países del mercosur a través de los años",
+        autor="Cesar Momberg",
         figura=figura,
     )
