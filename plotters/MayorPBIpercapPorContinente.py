@@ -17,12 +17,12 @@ def plot():
           title="Paises con mayor PBI per capita de cada continente", 
           x = "Año", 
           y = "PBI per capita", 
-          color = "Pais", 
+          color = "País", 
           linestyle = "Continente"
         )
     )
     return dict(
-        descripcion="Evolucion de los paises con mayor PBI per capita de cada continente a lo largo del tiempo",
-        autor="La cátedra",
+        descripcion="Evolución de los países con mayor PBI per capita de cada continente a lo largo del tiempo",
+        autor="Felipe Nahum",
         figura=figura,
     )
