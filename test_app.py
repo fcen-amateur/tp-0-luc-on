@@ -4,6 +4,7 @@
 import importlib
 from pkgutil import iter_modules
 
+from  matplotlib.figure import Figure
 import seaborn.objects as so
 import plotters
 
@@ -19,6 +20,8 @@ def test_formato_plot():
         retorno = submodulo.plot()
         assert isinstance(retorno, dict), "El retorno de `plot` debería ser un dict"
         assert set(retorno.keys()) == {"figura", "descripcion", "autor"}
-        assert isinstance(retorno["figura"], so.Plot), "`figura` debe ser un so.Plot"
+        assert isinstance(retorno["figura"], so.Plot) or isinstance(
+            retorno["figura"], Figure
+        ), "`figura` debe ser un so.Plot"
         assert isinstance(retorno["autor"], str), "`autor` debe ser un str"
         assert isinstance(retorno["descripcion"], str), "`descripcion` debe ser un str"
