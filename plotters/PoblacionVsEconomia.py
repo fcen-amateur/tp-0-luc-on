@@ -17,11 +17,11 @@ def plot():
             x="Poblacion",
             y="Producto Bruto Interno")
          .scale()    
-        ).facet("continent",wrap= 5).share(y = False)
+        ).facet("continent",wrap= 5).share(y = False, x =False)
 
     
     return dict(
-        descripcion="Gran caso de la paradoja de Simpson. Si miramos la relacion del pbi con la poblacion de los paises, en cada continente parece habe una correlacion directa entre los mismos. Sin embargo, contrario a lo que la intuicion nos diria, no hay una correlacion directa entre la poblacion y el tamaño de una economia a nivel global.Por ejemplo, india y china tienen casi 4 veces la poblacion de Estados Unidos, sin embargo si sumamos sus pbis y los comparamos al pais americano, no llegan a superarlo .En la modernidad, el acceso a la tecnologia,capitales,educacion junto con la existencia de robustaz instituciones nacionales tienen mucho mas relevancia para las economias que el tamaño de sus poblaciones",
+        descripcion="Gran caso de la paradoja de Simpson. Si miramos la relacion del pbi con la poblacion de los paises en cada continente ,parece habe una correlacion casi directa entre los mismos. Sin embargo, contrario a lo que la intuicion nos diria, no hay una correlacion directa entre la poblacion y el tamaño de una economia a nivel global.Por ejemplo, india y china tienen casi 4 veces la poblacion de Estados Unidos, sin embargo si sumamos sus pbis y los comparamos al pais americano, no llegan a superarlo.",
         autor="Daniel Bustos",
         figura=figura,
     )
