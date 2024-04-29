@@ -1,11 +1,19 @@
 import seaborn.objects as so
 from gapminder import gapminder
 
+
 def plot():
-    America = gapminder[gapminder["continent"] == "Americas"] 
-    figura = (so.Plot(data = America, x = "year", y = "lifeExp", group = "country", color = America["country"] == "Argentina")   
+    America = gapminder[gapminder["continent"] == "Americas"]
+    figura = (
+        so.Plot(
+            data=America,
+            x="year",
+            y="lifeExp",
+            group="country",
+            color=America["country"] == "Argentina",
+        )
         .add(so.Line())
-        .add(so.Dots)
+        .add(so.Dots())
         .label(
             title="La expectativa de vida en Argentina con respecto a los demas paises de America",
             x="Año",
