@@ -14,6 +14,7 @@ def plot():
             x="Año",
             y="Life Exp"
         )
+    )
     return dict(
         descripcion="Media de vida de cada continente a lo largo del tiempo con ajuste lineal",
         autor="Lucio Maspero",
