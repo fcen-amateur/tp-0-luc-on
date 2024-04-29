@@ -5,7 +5,7 @@ from gapminder import gapminder
 def plot():
     figura = (
         so.Plot(
-            gapminder[gapminder.continent == "Americas"],
+            gapminder[gapminder.continent == "Oceania"],
             x="year",
             y="lifeExp",
             color="country",

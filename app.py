@@ -19,7 +19,7 @@ def submodulos(modulo):
 st.write("# TPcit0: una galería de _gapminder_")
 
 
-opcion = st.selectbox("¿Qué gráfico desea ver?", submodulos(plotters))
+opcion = st.selectbox("¿Qué gráfico desea ver?", sorted(submodulos(plotters)))
 
 data = importlib.import_module(f"plotters.{opcion}").plot()
 
