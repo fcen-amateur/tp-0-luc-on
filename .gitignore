@@ -20,3 +20,5 @@
 
 # GitHub Classroom files
 .github
+# Para uso del corrector
+.gitattributes
