@@ -23,7 +23,7 @@ opcion = st.selectbox("¿Qué gráfico desea ver?", sorted(submodulos(plotters))
 
 data = importlib.import_module(f"plotters.{opcion}").plot()
 
-if isinstance(data, so.Plot) or isinstance(data, Figure):
+if isinstance(data, (so.Plot, Figure)) or hasattr(data["figura"], "figure"):
     data = dict(autor="N/A", descripcion="No disponible", figura=data)
 
 figura = data["figura"]
