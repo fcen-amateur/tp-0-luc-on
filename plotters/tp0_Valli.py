@@ -1,14 +1,12 @@
 import seaborn.objects as so
 from gapminder import gapminder
 
-datosArg = gapminder[gapminder["country"]=="Argentina"]
-datosChile = gapminder[gapminder["country"]=="Chile"]
 
 def plot():
+    datos = gapminder[gapminder.country.isin(["Argentina", "Chile"])]
     figura = (
-        so.Plot(data = datosArg, x = "year", color = "country")
-        .add(so.Line(), y = datosChile.gdpPercap)
-        .add(so.Line(), y = datosArg.gdpPercap)
+        so.Plot(datos, x="year", y="gdpPercap", color="country")
+        .add(so.Line())
         .label(
             title="El PBI per capita de Argentina y Chile",
             x="Año",
