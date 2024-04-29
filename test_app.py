@@ -21,7 +21,7 @@ def test_formato_plot():
         retorno = submodulo.plot()
         assert isinstance(retorno, dict), "El retorno de `plot` debería ser un dict"
         assert set(retorno.keys()) == {"figura", "descripcion", "autor"}
-        assert isinstance(retorno["figura"], [so.Plot, Figure]) or hasattr(
+        assert isinstance(retorno["figura"], (so.Plot, Figure)) or hasattr(
             retorno["figura"], "figure"
         ), "`figura` debe ser (a) un so.Plot, (b) una mpl.figure.Figure o (c) tener un attributo `figure` que sea una Figure"
         assert isinstance(retorno["autor"], str), "`autor` debe ser un str"
