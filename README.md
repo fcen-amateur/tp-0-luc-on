@@ -1,3 +1,4 @@
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/ztnPvLsL)
 # TPcit0 - Una galería gráfica colaborativa con Gapminder
 Trabajo Práctico: Consigna Integradora Temática Nro. 0, AKA "tepecito"
 
@@ -20,7 +21,9 @@ A partir del dataset `gapminder` en el paquete homónimo, y usando la interfaz `
 3. En la carpeta `plotters`, cree un nuevo archivo de Python.
 4. Copie los contenidos de la plantilla `paisesPorContinente.py` o `lifeExpOceania.py` al archivo recién creado. 
    Este archivo deberá contener una única función sin argumentos, de nombre `plot`, y que devuelva un diccionario (`dict`) con exactamente tres claves y sus respectivos valores:
-  - "figura", cuyo valor sea un objeto `seaborn.objects.Plot` con el gráfico realizado,
+  - "figura", cuyo valor sea 
+    - un objeto `seaborn.objects.Plot` o `matplotlib.figure.Figure`,
+    - un objeto con un atributo `figure` con el gráfico realizado,
   - "autor", cuyo valor sea una _cadena_ (`str`, "string") de caracters con el nombre del autor de la `figura` y
   - "descripcion" (sin tilde), cuyo valor sea un breve párrafo describiendo los aspectos relevantes del gráfico presentado.
 6. Vaya _commiteando_ los cambios que realiza a su rama, hasta estar satisfecho/a con el resultado.
