@@ -7,10 +7,9 @@ def plot():
   
   figura = (
     so.Plot(data=gapminder_EU_AFR, x="year")
-    .add(so.Dot(), so.Agg("mean"), y="gdpPercap", color="continent")
-    .add(so.Line(), so.Agg("mean"), y="gdpPercap", color="continent")
-    .add(so.Line(color="grey"), so.Agg("mean"), y=gapminder["gdpPercap"], label="World")
-    .label(title="PBI (nominal) per cápita anual promedio de Europa y África", x="Año", y="PBI per cápita")
+    .add(so.Line(marker="o"), so.Agg("mean"), y="gdpPercap", color="continent")
+    .add(so.Line(color="grey", marker="o"), so.Agg("mean"), y=gapminder["gdpPercap"], label="World")
+    .label(title="PBI (nominal) per cápita anual promedio de Europa y África", x="Año", y="PBI per cápita", color="Continente")
 )
   
   return dict(
